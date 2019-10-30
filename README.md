@@ -8,7 +8,7 @@ Instruments(soft+hard):
 -Grafana dashboard
 -Node MCU ESP 8266
 -DHT11 sensor
--connection wires
+-Connection wires
 
 Support installation software::
 - Install Arduino IDE: https://www.arduino.cc/en/Main/Software
