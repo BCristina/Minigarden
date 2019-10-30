@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>        // Include the Wi-Fi library
 
-const char* ssid     = "LANCOMBEIA";         // The SSID (name) of the Wi-Fi network you want to connect to
-const char* password = "beialancom";     // The password of the Wi-Fi network
+const char* ssid     = "Wi-Fi_network_name";         // The SSID (name) of the Wi-Fi network you want to connect to
+const char* password = "Wi-Fi_network_password";     // The password of the Wi-Fi network
 
 void setup() {
   Serial.begin(115200);         // Start the Serial communication to send messages to the computer
