@@ -15,4 +15,4 @@ Support installation software::
   - Install Drivere NodeMCU: https://www.marginallyclever.com/2017/02/setup-nodemcu-drivers-arduino-ide/
   - Configure the Arduino IDE for communication with NodeMCU: https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
   - Download all the libraries you need for this project from here: https://github.com/BCristina/Minigarden/blob/master/libraries.rar
-  - Instalare mqtt-spy: https://github.com/eclipse/paho.mqtt-spy/wiki/Downloads
+  - Install mqtt-spy: https://github.com/eclipse/paho.mqtt-spy/wiki/Downloads
