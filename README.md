@@ -10,7 +10,7 @@ Instruments (software + hardware):
   - DHT11 sensor
   - Connection wires
 
-Support installation software::
+Support for software installation:
   - Install Arduino IDE: https://www.arduino.cc/en/Main/Software
   - Install Drivere NodeMCU: https://www.marginallyclever.com/2017/02/setup-nodemcu-drivers-arduino-ide/
   - Configure the Arduino IDE for communication with NodeMCU: https://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/
