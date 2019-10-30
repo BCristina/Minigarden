@@ -44,19 +44,19 @@ WiFi.hostname("ESP_YourName");//If you want your NodeMCU to have a specific name
  Serial.println(WiFi.localIP());
  delay(2000);
 
-// Pornim senzorul DHT11
+// Turn on DHT11 sensor
 dht.begin();
 
 // MQTT CONNECTION
 
  
  Serial.print("connecting to MQTT broker...");
- client.begin("mqtt_server_name", WiFiclient);//mqtt_server_name -> here you complete with you mqtt server name (where you want to upload your data)
+ client.begin("mqtt_server_name", WiFiclient);//mqtt_server_name -> complete with the mqtt server name (where you want to upload your data)
  connect();
 }
  
 void connect() {
- while (!client.connect("grafana_topic", "try", "try")) { //grafana_topic -> you will complete with the topic you want to retrieve the data
+ while (!client.connect("grafana_topic", "try", "try")) { //grafana_topic -> complete with the topic you want to retrieve the data
    Serial.print(".");
  }
  
@@ -71,10 +71,10 @@ void connect() {
 
 void loop(void)
 {
-  // Atribuim variabilei "h" valoarea umiditatii, citita de functia "dht.readHumidity()"
+  // We assign the variable "h" to be humidity value, read by the function "dht.readHumidity ()" 
   float h = dht.readHumidity();
 
-  // Atribuim variabilei "t" valoarea temperaturii, citita de functia "dht.readTemperature()"
+  // We assign the variable "t" to be temperature value, read by the function "dht.readTemperature()"
   float t = dht.readTemperature();
 
     if (t>100 || t<0)
@@ -85,16 +85,16 @@ void loop(void)
   {
     h=0;
   }
-  // Afisam in consola mesajul "Exterior Temperature (C) = "
+  // Display the message: "Exterior Temperature (C) = "
   Serial.print("Exterior Temperature (C) = ");
 
-  // Afisam temperatura din camera, citita cu ajutorul senzorului Dht11
+  // Display the temperature value in the room, read using DHT11 sensor 
   Serial.println(t);
 
-  // Afisam in consola mesajul "Exterior Humidity = "
+  // Display the message: "Exterior Humidity = "
   Serial.print("Exterior Humidity = ");
 
-  // Afisam umiditatea din camera, citita cu ajutorul senzorului Dht11
+  // Display the humidity value in the room, read using the Dht11 sensor 
   Serial.println(h);
 
   String value = "\"HUMID\": " + String(h) ;
