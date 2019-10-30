@@ -2,7 +2,7 @@
 This project aims to help you connect an ESP8266 and a DHT11 (humidity and temperature sensor) to a dashboard in Grafana in order to visualize data in graph form.
 The codes for the mac address, the connection to the wifi and the code for checking the correct functioning of the dht11 sensor were also attached in this project.
 
-Instruments(soft+hard):
+Instruments (software + hardware):
   - Arduino IDE  
   - mqtt-spy
   - Grafana dashboard
