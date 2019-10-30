@@ -9,8 +9,8 @@
 DHT dht(DHTPIN, DHTTYPE);
 
  
-const char* ssid     = "PRAA";
-const char* password = "cristina";
+const char* ssid     = "Wi-Fi_network_name";
+const char* password = "Wi-Fi_network_password";
  
 WiFiClient WiFiclient;
 MQTTClient client;
@@ -28,7 +28,7 @@ void setup() {
  Serial.print("Connecting to ");
  Serial.println(ssid);
 
-WiFi.hostname("ESP_SabinaBosoc");
+WiFi.hostname("ESP_YourName");//If you want your NodeMCU to have a specific name in the LAN network
 
 // WIFI CONNECTION
  
@@ -51,17 +51,17 @@ dht.begin();
 
  
  Serial.print("connecting to MQTT broker...");
- client.begin("mqtt.beia-telemetrie.ro", WiFiclient);
+ client.begin("mqtt_server_name", WiFiclient);//mqtt_server_name -> here you complete with you mqtt server name (where you want to upload your data)
  connect();
 }
  
 void connect() {
- while (!client.connect("odsi/rpi/sabina", "try", "try")) {
+ while (!client.connect("grafana_topic", "try", "try")) { //grafana_topic -> you will complete with the topic you want to retrieve the data
    Serial.print(".");
  }
  
  Serial.println("\nconnected!");
- client.subscribe("odsi/rpi/sabina");
+ client.subscribe("grafana_topic");
 
 }
 
@@ -117,6 +117,6 @@ void loop(void)
    lastMillis = millis();
    String payload = "{" + value + "}";
    payload.toCharArray(data, (payload.length() + 1));
-   client.publish("odsi/rpi/sabina", data);
+   client.publish("grafana_topic", data);
  }
 }
